@@ -48,13 +48,13 @@ fn ping(tx: Sender<String>, addr: IpAddr) {
             match mb_time {
                 Some(time) => {
                     tx.send(addr.to_string()).unwrap();
-                    println!("{} time={:?}", addr, time);
+                    //println!("{} time={:?}", addr, time);
                 },
-                None => println!("timeout"),
+                None => {}, /*println!("timeout")*/
             }
             Ok(())
         })
     });
 
-    tokio::run(future.map_err(|err| eprintln!("Error: {}", err)))
+    tokio::run(future) //.map_err(|err| eprintln!("Error: {}", err)))
 }
