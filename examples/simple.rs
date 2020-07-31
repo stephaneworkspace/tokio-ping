@@ -8,6 +8,10 @@ use std::net::{IpAddr, Ipv4Addr};
 use std::sync::mpsc::{channel, Sender};
 use std::thread;
 
+async fn run() {
+    println!("Run");
+}
+
 fn main() {
     println!("Begning");
     let mut ips: Vec<IpAddr> = Vec::new();
